@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<form action="{{ url('user/register') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ url('register') }}" method="POST" enctype="multipart/form-data">
 
     {{ csrf_field() }}
     <div class="container">

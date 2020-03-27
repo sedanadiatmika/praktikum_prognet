@@ -9,7 +9,7 @@
 <h1>Halo {{ $user['name'] }}</h1>
 <p>Klik link berikut untuk verifikasi email</p>
 
-<a href="{{ url('user/verify',$user['email']) }}">LINK</a>
+<a href="{{ url('verify',$user['email']) }}">LINK</a>
 
 </body>
 </html>

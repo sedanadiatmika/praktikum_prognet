@@ -73,7 +73,7 @@ class adminController extends Controller
             $new->profile_image = $disimpan;
             $new->save();
 
-            return "sukses register";
+            return redirect('admin/registration_success');
         }
     }
 
@@ -86,11 +86,8 @@ class adminController extends Controller
     public function loginsubmit(Request $request){
 
         $validator = Validator::make(request()->all(),[
-            'name' => 'required|min:6|max:30|unique:admins,name',
-            'phone' => 'required|numeric|min:12|max:13|unique:admins,phone',
-            'username' => 'required|min:6|max:30|unique:admins,username',
-            'password' => 'min:8',
-            'file' => 'required|max:700',
+            'username' => 'required|min:6|max:30|',
+            'password' => 'min:8'
         ],
             [
                 'name.required'=>'Nama tidak boleh kososng',
@@ -144,5 +141,9 @@ class adminController extends Controller
         }
 
         return redirect('/admin/login');
+    }
+
+    public function adminreg(){
+        return view('admin/registersukses');
     }
 }

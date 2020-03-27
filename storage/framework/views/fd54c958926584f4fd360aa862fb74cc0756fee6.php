@@ -9,7 +9,7 @@
 <h1>Halo <?php echo e($user['name']); ?></h1>
 <p>Klik link berikut untuk verifikasi email</p>
 
-<a href="<?php echo e(url('user/verify',$user['email'])); ?>">LINK</a>
+<a href="<?php echo e(url('verify',$user['email'])); ?>">LINK</a>
 
 </body>
 </html>

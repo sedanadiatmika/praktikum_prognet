@@ -22,9 +22,10 @@ Route::prefix('admin')->group(function(){
     Route::post('/register','adminController@registersubmit');
     Route::get('/logout','adminController@logoutadmin');
     Route::get('/dashboard', 'admincontroller@dashboard')->middleware('loginadmin');
+    Route::get('/registration_success','adminController@adminreg');
 });
 
-Route::prefix('user')->group(function() {
+Route::prefix('')->group(function() {
     Route::get('/login','userController@userlogin');
     Route::get('/register','userController@userregister');
     Route::post('/register','userController@registersubmit');

@@ -52,7 +52,7 @@ class userController extends Controller
             ]);
 
         if ($validator->fails()){
-            return redirect('user/register')->withErrors($validator->errors());
+            return redirect('/register')->withErrors($validator->errors());
 
         } else {
 
@@ -76,7 +76,7 @@ class userController extends Controller
 
             Mail::to($request->email)->send(new verifyuser($data));
 
-            return redirect('/user/verify');
+            return redirect('verify');
         }
     }
 
@@ -111,12 +111,12 @@ class userController extends Controller
             ]);
 
         if ($validator->fails()) {
-            return redirect('user/login')->withErrors($validator->errors());
+            return redirect('login')->withErrors($validator->errors());
         } else {
 
             $data = $request->only('name', 'password');
             if (Auth::guard('user')->attempt($data)) {
-                return redirect('user/dashboard');
+                return redirect('dashboard');
 
             } else {
                 return "username atau password salah";
@@ -132,14 +132,14 @@ class userController extends Controller
         if(Auth::guard('user')->check()){
             Auth::guard('user')->logout();
         }
-        return redirect('user/login');
+        return redirect('login');
     }
 
     public function verifyemailuser($email){
         $veri = DB::statement('UPDATE users SET users.`email_verified_at`=NOW()
         WHERE users.email = ?',array($email));
 
-        return redirect('user/verifysuccess');
+        return redirect('verifysuccess');
     }
 
     public function sendagain(){

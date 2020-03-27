@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<form action="<?php echo e(url('user/register')); ?>" method="POST" enctype="multipart/form-data">
+<form action="<?php echo e(url('register')); ?>" method="POST" enctype="multipart/form-data">
 
     <?php echo e(csrf_field()); ?>
 

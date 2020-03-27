@@ -7,7 +7,7 @@
 <body>
 {{ "Selamat datang ".Auth::guard('user')->user()->name }}
 <br>
-<a href="{{ url('user/logout') }}">
+<a href="{{ url('logout') }}">
     <button>
         Logout
     </button>

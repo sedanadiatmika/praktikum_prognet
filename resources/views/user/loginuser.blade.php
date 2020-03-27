@@ -18,7 +18,7 @@ if(isset($_GET['alert'])) {
     <title>Login</title>
 </head>
 <body>
-<form action="{{ url('user/login') }}" method="POST">
+<form action="{{ url('login') }}" method="POST">
     {{ csrf_field() }}
 
     <div class="container">

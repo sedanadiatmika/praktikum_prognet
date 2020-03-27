@@ -7,11 +7,11 @@
 </head>
 
 <body>
-<form action="{{ url('user/register') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ url('register') }}" method="POST" enctype="multipart/form-data">
 
 <p>Silahkan verifikasi email terlebih dahulu untuk login</p>
 <p>Klik link berikut apabila email verifikasi belum terkirim</p>
-<a href="/user/verifyagain">LINK</a>
+<a href="/verifyagain">LINK</a>
 
 
 </form>
